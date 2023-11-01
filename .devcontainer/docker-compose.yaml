@@ -1,0 +1,73 @@
+version: '2'
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet:   192.168.132.0/24 # In order to specify static IPs, we must explicitly declare subnet.
+          ip_range: 192.168.132.128/25 # Range for dynamic IPs. We'll make sure to assign static IPs outside this range.
+
+services:
+  dnsmasq:
+    image: strm/dnsmasq
+    volumes:
+      - ./dnsmasq.conf:/etc/dnsmasq.conf
+    cap_add:
+      - NET_ADMIN
+    networks:
+      default:
+        ipv4_address: 192.168.132.2
+
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/base:debian
+    volumes:
+      - ../..:/workspaces:cached
+      - k3s-config:/k3s/config
+      - k3s-data:/k3s/data
+      - k3s-manifests:/k3s/manifests
+    command: sleep infinity
+    network_mode: service:k3s
+
+  k3s:
+    image: "rancher/k3s:v1.27.4-k3s1"
+    command: server
+    environment:
+      - K3S_NODE_NAME=k3s
+      - K3S_KUBECONFIG_MODE=644
+    tmpfs:
+    - /run
+    - /var/run
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 65535
+        hard: 65535
+    privileged: true
+    volumes:
+    - k3s-data:/var/lib/rancher/k3s
+    - k3s-config:/etc/rancher/k3s
+    - k3s-manifests:/var/lib/rancher/k3s/server/manifests
+    ports:
+    - 6443:6443
+    - 8080:80
+    - 8443:443
+    networks:
+      default:
+        ipv4_address: 192.168.132.5
+    dns:
+      - 192.168.132.2
+
+  chromium:
+    image: 'ghcr.io/linuxserver/chromium:latest'
+    container_name: chromium
+    ports:
+      - 3000:3000
+      - 3001:3001
+    shm_size: "1gb"
+    dns:
+      - 192.168.132.2
+
+volumes:
+  k3s-config:
+  k3s-data:
+  k3s-manifests:
