@@ -61,8 +61,7 @@ services:
     image: 'ghcr.io/linuxserver/chromium:latest'
     container_name: chromium
     ports:
-      - 3000:3000
-      - 3001:3001
+      - 3000:6901
     shm_size: "1gb"
     dns:
       - 192.168.132.2
