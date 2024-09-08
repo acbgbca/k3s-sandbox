@@ -8,8 +8,7 @@
 	"runServices": ["dnsmasq", "k3s", "chromium"],
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"features": {
-		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
-		"ghcr.io/devcontainers-contrib/features/ansible:2": {}
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {}
 	},
 	"containerEnv": {
 		"KUBECONFIG": "/k3s/config/k3s.yaml"
