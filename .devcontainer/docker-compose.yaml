@@ -9,7 +9,7 @@ networks:
 
 services:
   dnsmasq:
-    image: strm/dnsmasq
+    image: strm/dnsmasq:latest@sha256:dcf4c0aeb69ea6b9bca81314449d732ecd2ea021588d8a34d4be7c2304f89a39
     volumes:
       - ./dnsmasq.conf:/etc/dnsmasq.conf
     cap_add:
@@ -19,7 +19,7 @@ services:
         ipv4_address: 192.168.132.2
 
   devcontainer:
-    image: mcr.microsoft.com/devcontainers/base:debian
+    image: mcr.microsoft.com/devcontainers/base:1.1.4-ubuntu
     volumes:
       - ../..:/workspaces:cached
       - k3s-config:/k3s/config
@@ -58,7 +58,7 @@ services:
       - 192.168.132.2
 
   chromium:
-    image: 'ghcr.io/linuxserver/chromium:latest'
+    image: 'ghcr.io/linuxserver/chromium:latest@sha256:a53e60ec65b6c8d1333b0f3768eb4e6a213029970c2b06df9f8ee8f960e8f086'
     container_name: chromium
     ports:
       - 3000:6901
