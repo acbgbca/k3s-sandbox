@@ -9,9 +9,13 @@ networks:
 
 services:
   dnsmasq:
-    image: strm/dnsmasq:latest@sha256:dcf4c0aeb69ea6b9bca81314449d732ecd2ea021588d8a34d4be7c2304f89a39
-    volumes:
-      - ./dnsmasq.conf:/etc/dnsmasq.conf
+    image: ghcr.io/acbgbca/dnsmasq:latest@sha256:260d0fb07d1c1e75e83218d24c4a2ebb8c87bde0a1d345bc5c91dbae1a6b3470
+    environment:
+      - |
+        DNSMASQ_CONF=
+        address=/local/192.168.132.5
+        address=/internal/192.168.132.5
+        address=/homelab/192.168.132.5
     cap_add:
       - NET_ADMIN
     networks:
