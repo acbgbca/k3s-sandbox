@@ -33,7 +33,7 @@ services:
     network_mode: service:k3s
 
   k3s:
-    image: "rancher/k3s:v1.31.0-k3s1"
+    image: "rancher/k3s:v1.31.1-k3s1"
     command: server
     environment:
       - K3S_NODE_NAME=k3s
