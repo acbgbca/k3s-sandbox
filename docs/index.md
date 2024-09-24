@@ -2,6 +2,7 @@
 
 See below for instructions on setting up various tools within Kubernetes
 
+* [Basics](./basics.md)
 * [Portainer](./portainer.md)
 
 TODO: Services to setup
