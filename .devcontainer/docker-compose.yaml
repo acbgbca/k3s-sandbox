@@ -23,7 +23,7 @@ services:
         ipv4_address: 192.168.132.2
 
   devcontainer:
-    image: mcr.microsoft.com/devcontainers/base:1.1.5-ubuntu
+    image: mcr.microsoft.com/devcontainers/base:1.2.0-ubuntu
     volumes:
       - ../..:/workspaces:cached
       - k3s-config:/k3s/config
