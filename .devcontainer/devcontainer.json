@@ -8,8 +8,7 @@
 	"runServices": ["dnsmasq", "k3s", "chromium"],
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"features": {
-		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1.2.0": {},
-		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1.2.0": {}
 	},
 	"containerEnv": {
 		"KUBECONFIG": "/k3s/config/k3s.yaml"
