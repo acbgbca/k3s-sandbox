@@ -23,7 +23,7 @@ services:
         ipv4_address: 192.168.132.2
 
   devcontainer:
-    image: mcr.microsoft.com/devcontainers/base:1.2.3-ubuntu
+    image: mcr.microsoft.com/devcontainers/base:1.2.4-ubuntu
     volumes:
       - ../..:/workspaces
       - k3s-config:/k3s/config
@@ -62,7 +62,7 @@ services:
       - 192.168.132.2
 
   chromium:
-    image: 'ghcr.io/linuxserver/chromium:latest@sha256:697e4be1fab85d1b8a4f926e1a8e4f80a880166ce3f635252e57d699a826a9be'
+    image: 'ghcr.io/linuxserver/chromium:latest@sha256:180d7b4953b8a42e7e10f9e359dac3ff248ce52c70fc6664df9af65b0cfcecd7'
     container_name: chromium
     ports:
       - 3000:6901
