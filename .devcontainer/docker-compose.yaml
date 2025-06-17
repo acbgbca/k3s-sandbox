@@ -23,7 +23,7 @@ services:
         ipv4_address: 192.168.132.2
 
   devcontainer:
-    image: mcr.microsoft.com/devcontainers/base:1.2.6-ubuntu
+    image: mcr.microsoft.com/devcontainers/base:2.0.1-ubuntu
     volumes:
       - ../..:/workspaces
       - k3s-config:/k3s/config
@@ -33,7 +33,7 @@ services:
     network_mode: service:k3s
 
   k3s:
-    image: "rancher/k3s:v1.33.0-k3s1"
+    image: "rancher/k3s:v1.33.1-k3s1"
     command: server
     environment:
       - K3S_NODE_NAME=k3s
@@ -62,7 +62,7 @@ services:
       - 192.168.132.2
 
   chromium:
-    image: 'ghcr.io/linuxserver/chromium:latest@sha256:81483f60a1fd3bea883d1ab70002f2147c2a61be50fea15f6861f6dd8fa9c38f'
+    image: 'ghcr.io/linuxserver/chromium:latest@sha256:c14ae7d57e0e073669d18b4380070f6796e02112c8b2a9c22028a472f081beaf'
     container_name: chromium
     ports:
       - 3000:6901
