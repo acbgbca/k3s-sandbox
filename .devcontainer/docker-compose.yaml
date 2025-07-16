@@ -62,7 +62,7 @@ services:
       - 192.168.132.2
 
   chromium:
-    image: 'ghcr.io/linuxserver/chromium:latest@sha256:15a7f81ecc33391e80197eaf579a83d94334f810f8423ab80f3e3b5b7d400238'
+    image: 'ghcr.io/linuxserver/chromium:latest@sha256:f8e115d732aacfe644009e50801b7fd3a4250105b6cf1b354454e32eacb9b50b'
     container_name: chromium
     ports:
       - 3000:6901
