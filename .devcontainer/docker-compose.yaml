@@ -9,7 +9,7 @@ networks:
 
 services:
   dnsmasq:
-    image: ghcr.io/acbgbca/dnsmasq:latest@sha256:7935b308f594d82a714efc53e32170a755d381bec3abe6efe711372f060e0b91
+    image: ghcr.io/acbgbca/dnsmasq:latest@sha256:87d99436601dbcd716de58ddbfa863bce6afd0f84a3afd135057b0310a814b57
     environment:
       - |
         DNSMASQ_CONF=
@@ -33,7 +33,7 @@ services:
     network_mode: service:k3s
 
   k3s:
-    image: "rancher/k3s:v1.34.3-k3s1"
+    image: "rancher/k3s:v1.35.0-k3s1"
     command: server
     environment:
       - K3S_NODE_NAME=k3s
@@ -62,7 +62,7 @@ services:
       - 192.168.132.2
 
   chromium:
-    image: 'ghcr.io/linuxserver/chromium:latest@sha256:9d95636e603b48d0927768e2af7fdbc9739223c1cedcfc336336ae721ff4f0a0'
+    image: 'ghcr.io/linuxserver/chromium:latest@sha256:440b3c2a3fcb9779eea0150f2cb28b3534fcc5548adb3e9b2aa817bcc73f37c4'
     container_name: chromium
     ports:
       - 3000:6901
