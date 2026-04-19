@@ -9,7 +9,7 @@ networks:
 
 services:
   dnsmasq:
-    image: ghcr.io/acbgbca/dnsmasq:latest@sha256:b524432b826b2832c0ea4b46a9a4e947167a32e7048120089806e37f15473b6c
+    image: ghcr.io/acbgbca/dnsmasq:latest@sha256:b15a1407895670a8056e3c647ba0af1c09ed73b5d8acfeaa666a1601e8ecd2c6
     environment:
       - |
         DNSMASQ_CONF=
@@ -62,7 +62,7 @@ services:
       - 192.168.132.2
 
   chromium:
-    image: 'ghcr.io/linuxserver/chromium:latest@sha256:c17fe14a766231de6a4ac72b66f4076e2e19db27d3a113a09bdd86dfb242f568'
+    image: 'ghcr.io/linuxserver/chromium:latest@sha256:be565732328d95754e45d826b3987e659b5f961fe267be88e8b1808567e94842'
     container_name: chromium
     ports:
       - 3000:6901
