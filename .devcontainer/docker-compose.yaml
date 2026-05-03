@@ -33,7 +33,7 @@ services:
     network_mode: service:k3s
 
   k3s:
-    image: "rancher/k3s:v1.35.3-k3s1@sha256:4607083d3cac07e1ccde7317297271d13ed5f60f35a78f33fcef84858a9f1d69"
+    image: "rancher/k3s:v1.35.4-k3s1@sha256:475e036b3fd595472c13ec708c148ffd95459d5f9e40e6df76ba4d5b27098570"
     command: server
     environment:
       - K3S_NODE_NAME=k3s
@@ -62,7 +62,7 @@ services:
       - 192.168.132.2
 
   chromium:
-    image: 'ghcr.io/linuxserver/chromium:latest@sha256:9d36856d2e3ddd651250ab02da945560377c8d281a387d380b7b3e0ddd005170'
+    image: 'ghcr.io/linuxserver/chromium:latest@sha256:b02b6eaa8f104169866e1d77058b4e7710891cce5aba91239615190aea032c06'
     container_name: chromium
     ports:
       - 3000:6901
