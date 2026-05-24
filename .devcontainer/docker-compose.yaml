@@ -9,7 +9,7 @@ networks:
 
 services:
   dnsmasq:
-    image: ghcr.io/acbgbca/dnsmasq:latest@sha256:b15a1407895670a8056e3c647ba0af1c09ed73b5d8acfeaa666a1601e8ecd2c6
+    image: ghcr.io/acbgbca/dnsmasq:latest@sha256:530cfcfc6f8af42d84d7d5ce757354a1bf4adc7cc70d29d0f85340b3835c621d
     environment:
       - |
         DNSMASQ_CONF=
@@ -23,7 +23,7 @@ services:
         ipv4_address: 192.168.132.2
 
   devcontainer:
-    image: mcr.microsoft.com/devcontainers/base:2.1.8-ubuntu@sha256:7ee7da33a68d997971660d91ecc8372e55a38a777c3c6bd6808daf91928052db
+    image: mcr.microsoft.com/devcontainers/base:3.0.1-ubuntu@sha256:bb779775cfc7d2e65f9b0f80f17770878f5a50c00d15cc873b627c5c214ce37e
     volumes:
       - ../..:/workspaces
       - k3s-config:/k3s/config
@@ -33,7 +33,7 @@ services:
     network_mode: service:k3s
 
   k3s:
-    image: "rancher/k3s:v1.36.0-k3s1@sha256:38069dc4a22a056f427f4f37c887303697cc817f7735e57dd142e169af7f398f"
+    image: "rancher/k3s:v1.36.1-k3s1@sha256:08fdebd14db9ab7d5ea821d5bfa95d02341a6ef886842fcc8d9dfd0e9fa9e0cd"
     command: server
     environment:
       - K3S_NODE_NAME=k3s
@@ -62,7 +62,7 @@ services:
       - 192.168.132.2
 
   chromium:
-    image: 'ghcr.io/linuxserver/chromium:latest@sha256:6d037d5529983e978f0b308492aa7363e9d5db1c916b9a2d40ac9565909c427b'
+    image: 'ghcr.io/linuxserver/chromium:latest@sha256:d089526dfba8d0b881f9a6c129c6f263265ed0ec74915fa7baeb56ceaf087001'
     container_name: chromium
     ports:
       - 3000:6901
