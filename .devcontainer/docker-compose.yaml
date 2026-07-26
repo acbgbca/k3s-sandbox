@@ -9,7 +9,7 @@ networks:
 
 services:
   dnsmasq:
-    image: ghcr.io/acbgbca/dnsmasq:latest@sha256:60b1c715814cfb8330fff8f3b84201932f489b27ef9705372de09b9b2f4ffc73
+    image: ghcr.io/acbgbca/dnsmasq:latest@sha256:5d547387cb44169b1b7fd79f4d55094e85a9772d5adb0c2c360accc29c0e8033
     environment:
       - |
         DNSMASQ_CONF=
@@ -23,7 +23,7 @@ services:
         ipv4_address: 192.168.132.2
 
   devcontainer:
-    image: mcr.microsoft.com/devcontainers/base:3.0.2-ubuntu@sha256:d1fc409bd576f7b6f81c5cfd7399ac8b26d0fd80ba0d2eb269b1e6e1f151d22b
+    image: mcr.microsoft.com/devcontainers/base:3.0.3-ubuntu@sha256:36c0ae9fe6bfa914cf7eb05b08b09a3a31961dc76eed6fbb75179382c817582c
     volumes:
       - ../..:/workspaces
       - k3s-config:/k3s/config
@@ -62,7 +62,7 @@ services:
       - 192.168.132.2
 
   chromium:
-    image: 'ghcr.io/linuxserver/chromium:latest@sha256:6bae4c2dd469b7ff263cb523b1e6aa6ae9d78656cc15ceebb33e07dd160b5316'
+    image: 'ghcr.io/linuxserver/chromium:latest@sha256:5b86c3d40c2fabb9037227597efa665984c29977514429e5ecf7a9895c80bf46'
     container_name: chromium
     ports:
       - 3000:6901
