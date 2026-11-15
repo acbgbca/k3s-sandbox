@@ -9,7 +9,7 @@ networks:
 
 services:
   dnsmasq:
-    image: ghcr.io/acbgbca/dnsmasq:latest@sha256:bda877044f557080ff72cecd74e8b2459290d5089fac87b1f411f8f112a56589
+    image: ghcr.io/acbgbca/dnsmasq:latest@sha256:ca424cec0b0b03a7dc1072ed76e06df49b46a93f9027a9644104c3a6fbc6cb9c
     environment:
       - |
         DNSMASQ_CONF=
